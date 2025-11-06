@@ -14,7 +14,7 @@ final class GroupViewerGroupCell: SelectableCollectionViewListCell {
         var config = UIListContentConfiguration.valueCell()
         config.text = group.name
         config.textProperties.numberOfLines = 3
-        config.textProperties.font = .preferredFont(forTextStyle: .headline)
+        config.textProperties.font = .preferredFont(forTextStyle: .body)
 
         let childrenCount = group.groups.count + group.entries.count
         if !group.isSmartGroup {
