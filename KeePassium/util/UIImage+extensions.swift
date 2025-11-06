@@ -87,6 +87,7 @@ public enum SymbolName: String, Equatable {
     case clock = "clock"
     case clockArrowCirclepath = "clock.arrow.circlepath"
     case clockBadgeCheckmark = "clock.badge.checkmark"
+    case clockBadgeXmark = "clock.badge.xmark"
     case clockShield = "clock.shield"
     case dieFace3 = "die.face.3"
     case docOnDoc = "doc.on.doc"
