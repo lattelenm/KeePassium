@@ -17,8 +17,14 @@ final class GroupViewerEntryCell: SelectableCollectionViewListCell {
         config.textProperties.font = .preferredFont(forTextStyle: .body)
 
         config.secondaryText = entry.resolvedSubtitle
+        config.secondaryTextProperties.font = .preferredFont(forTextStyle: .footnote)
         config.secondaryTextProperties.color = .secondaryLabel
         config.secondaryTextProperties.numberOfLines = 1
+
+        config.textToSecondaryTextVerticalPadding = 2
+        if entry.resolvedSubtitle != nil {
+            config.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0)
+        }
 
         config.image = UIImage.kpIcon(forEntry: entry)
         config.imageProperties.maximumSize = UIImage.kpIconMaxSize
