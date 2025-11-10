@@ -27,7 +27,10 @@ final class GroupViewerEntryCell: SelectableCollectionViewListCell {
         }
 
         config.image = UIImage.kpIcon(forEntry: entry)
-        config.imageProperties.maximumSize = UIImage.kpIconMaxSize
+        config.imageProperties.maximumSize = CGSize(width: UIImage.kpIconMaxSize, height: UIImage.kpIconMaxSize)
+        config.imageProperties.reservedLayoutSize = config.imageProperties.maximumSize
+        config.imageProperties.preferredSymbolConfiguration =
+            .init(pointSize: UIImage.kpIconMaxSize, weight: .light)
         self.contentConfiguration = config
 
         UIView.performWithoutAnimation { [weak self] in

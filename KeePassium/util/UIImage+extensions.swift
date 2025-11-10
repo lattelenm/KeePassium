@@ -237,7 +237,7 @@ extension UIImage {
         self.init(named: asset.rawValue)! 
     }
 
-    public static let kpIconMaxSize = CGSize(width: 29, height: 29)
+    public static let kpIconMaxSize: CGFloat = 32
 
     static func kpIcon(forEntry entry: Entry, iconSet: DatabaseIconSet? = nil) -> UIImage? {
         if let entry2 = entry as? Entry2,
