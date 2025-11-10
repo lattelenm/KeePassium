@@ -9,9 +9,17 @@
 import KeePassiumLib
 
 extension EntryCreatorCoordinator {
+    func _getDefaultParentGroup() -> Group? {
+        let database = _databaseFile.database
+        if database.supportsEntriesInRoot {
+            return database.root
+        } else {
+            return database.root?.groups.first(where: { !$0.isDeleted })
+        }
+    }
 
     func _makeInitialEntryData() {
-        guard let rootGroup = _databaseFile.database.root else {
+        guard let defaultParentGroup = _getDefaultParentGroup() else {
             assertionFailure()
             return
         }
@@ -20,7 +28,7 @@ extension EntryCreatorCoordinator {
         let url = _getContextURL(from: _searchContext)
         let title = _makeTitle(from: url)
         _entryData = EntryCreatorEntryData(
-            parentGroup: rootGroup,
+            parentGroup: defaultParentGroup,
             title: title ?? "",
             username: username ?? "",
             password: password ?? "",

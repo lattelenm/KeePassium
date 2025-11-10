@@ -59,6 +59,8 @@ public class Database1: Database {
         static let packing: Int64 = 10
     }
 
+    public override var supportsEntriesInRoot: Bool { false }
+
     public override var peakKDFMemoryFootprint: Int {
         return AESKDF.memoryFootprint
     }
