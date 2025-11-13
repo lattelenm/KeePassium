@@ -209,7 +209,7 @@ extension ManagedAppConfig {
             return nil
         }
 
-        guard LicenseManager.shared.hasActiveBusinessLicense() else {
+        guard LicenseManager.shared.hasAcceptableBusinessLicense else {
             warnAboutMissingLicenseOnce()
             return nil
         }
@@ -254,7 +254,7 @@ extension ManagedAppConfig {
             return nil
         }
 
-        guard LicenseManager.shared.hasActiveBusinessLicense() else {
+        guard LicenseManager.shared.hasAcceptableBusinessLicense else {
             warnAboutMissingLicenseOnce()
             return nil
         }
@@ -287,7 +287,7 @@ extension ManagedAppConfig {
             return nil
         }
 
-        guard LicenseManager.shared.hasActiveBusinessLicense() else {
+        guard LicenseManager.shared.hasAcceptableBusinessLicense else {
             warnAboutMissingLicenseOnce()
             return nil
         }
@@ -309,7 +309,7 @@ extension ManagedAppConfig {
             return nil
         }
 
-        guard LicenseManager.shared.hasActiveBusinessLicense() else {
+        guard LicenseManager.shared.hasAcceptableBusinessLicense else {
             warnAboutMissingLicenseOnce()
             return nil
         }

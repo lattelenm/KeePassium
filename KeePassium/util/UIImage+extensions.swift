@@ -33,6 +33,7 @@ public enum SymbolName: String, Equatable {
     public static let fieldReference = Self.arrowRightCircle
     public static let largeType = Self.characterMagnify
     public static let managedParameter = Self.person2BadgeGearshape
+    public static let orgLicenseProblem = Self.person2Slash
     public static let oneTimePassword = Self.clock
     public static let passkey = Self.personBadgeKey
     public static let passkeyBroken = Self.keySlash
@@ -145,6 +146,7 @@ public enum SymbolName: String, Equatable {
     case person = "person"
     case personBadgePlus = "person.badge.plus"
     case person2BadgeGearshape = "person.2.badge.gearshape"
+    case person2Slash = "person.2.slash"
     case person3 = "person.3"
     case personCropCircleBadgeCheckmark = "person.crop.circle.badge.checkmark"
     case photo = "photo"
