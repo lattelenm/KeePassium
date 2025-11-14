@@ -61,7 +61,9 @@ public final class ManagedAppConfig: NSObject {
         }
         return config
     }
-    private var intuneConfig: [String: Any]?
+    private var intuneConfig: [String: Any]? {
+        didSet { refresh() }
+    }
     private var previousLicenseValue: String?
     private var hasWarnedAboutMissingLicense = false
     private var allowedFileProviders: FileProviderRestrictions?
@@ -81,6 +83,10 @@ public final class ManagedAppConfig: NSObject {
     }
 
     private func userDefaultsDidChange(_ notification: Notification) {
+        refresh()
+    }
+
+    private func refresh() {
         let newLicense = license
         if newLicense != previousLicenseValue {
             Diag.debug("License key changed, reloading")
